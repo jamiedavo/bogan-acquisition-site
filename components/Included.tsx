@@ -1,21 +1,38 @@
 import { siteContent } from "@/data/siteContent";
 
-export function Included() {
+type IncludedProps = {
+  content: typeof siteContent.included;
+};
+
+export function Included({ content }: IncludedProps) {
   return (
-    <section className="border-b border-neutral-800 py-16">
-      <p className="mb-3 text-sm uppercase tracking-[0.2em] text-neutral-500">
-        Acquisition placeholder
-      </p>
+    <section className="grid gap-10 border-b border-neutral-800 py-20 lg:grid-cols-[0.8fr_1.2fr]">
+      <div>
+        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-red-400">
+          {content.eyebrow}
+        </p>
 
-      <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-        {siteContent.included.heading}
-      </h2>
+        <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">
+          {content.heading}
+        </h2>
+      </div>
 
-      <ul className="mt-6 space-y-3 text-neutral-300">
-        {siteContent.included.placeholderList.map((item) => (
-          <li key={item}>— {item}</li>
-        ))}
-      </ul>
+      <div>
+        <ul className="space-y-3">
+          {content.points.map((point) => (
+            <li
+              key={point}
+              className="rounded-2xl border border-neutral-800 bg-neutral-900 p-4 text-neutral-300"
+            >
+              {point}
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-6 text-lg leading-8 text-neutral-300">
+          {content.copy}
+        </p>
+      </div>
     </section>
   );
 }
