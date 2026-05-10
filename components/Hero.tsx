@@ -1,148 +1,121 @@
+import {
+  HeroMotion,
+  MotionLink,
+  StaggerItem,
+} from "@/components/MotionPrimitives";
 import { siteContent } from "@/data/siteContent";
-
-const assetSignals = [
-  {
-    label: "Asset",
-    value: "One-word .co.nz",
-  },
-  {
-    label: "Market",
-    value: "New Zealand",
-  },
-  {
-    label: "Use",
-    value: "Brand / campaign / culture",
-  },
-];
 
 export default function Hero() {
   const { hero } = siteContent;
-  const heroMarkers = siteContent.credibility.points.slice(0, 4);
 
   return (
-    <section className="section-shell relative z-10 pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12">
-      <div className="hero-glow-panel relative overflow-hidden rounded-[1.75rem] border fine-border px-5 py-10 shadow-premium sm:px-8 sm:py-14 lg:px-10 lg:py-16 xl:px-12">
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_18%,rgba(163,58,42,0.22),transparent_32%),radial-gradient(circle_at_82%_10%,rgba(155,122,66,0.11),transparent_28%)]" />
+    <HeroMotion className="relative px-5 pb-16 pt-8 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-8 flex items-center justify-between gap-4 border-b border-[#F1E6CF]/10 pb-5">
+          <StaggerItem>
+            <a
+              href="#top"
+              className="text-sm font-black uppercase tracking-[0.22em] text-[#F1E6CF] sm:text-base"
+            >
+              bogan.co.nz
+            </a>
+          </StaggerItem>
 
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 opacity-[0.055]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(241,230,207,0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(241,230,207,0.55) 1px, transparent 1px)",
-            backgroundSize: "42px 42px",
-          }}
-        />
+          <StaggerItem>
+            <a
+              href="#enquire"
+              className="hidden rounded-full border border-[#F1E6CF]/15 bg-[#181816]/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#CDBF9F] transition hover:border-[#A33A2A]/60 hover:text-[#F1E6CF] sm:inline-flex"
+            >
+              Enquire
+            </a>
+          </StaggerItem>
+        </div>
 
-        <div className="grid gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:items-center">
+        <div className="grid min-h-[calc(100vh-140px)] gap-10 lg:grid-cols-[minmax(0,0.98fr)_minmax(360px,0.72fr)] lg:items-center lg:gap-14">
           <div className="max-w-4xl">
-            <div className="mb-7 flex flex-wrap items-center gap-3">
-              <div className="inline-flex items-center gap-2 rounded-full border border-red/35 bg-red/10 px-3.5 py-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-red" />
-                <span className="font-label text-[0.68rem] font-bold uppercase tracking-[0.2em] text-cream">
-                  {hero.eyebrow}
-                </span>
+            <StaggerItem>
+              <div className="mb-5 inline-flex rounded-full border border-[#A33A2A]/40 bg-[#A33A2A]/10 px-4 py-2 text-[0.68rem] font-black uppercase tracking-[0.2em] text-[#F1E6CF] shadow-[0_0_40px_rgba(163,58,42,0.14)] sm:text-xs">
+                {hero.status}
               </div>
+            </StaggerItem>
 
-              <div className="hidden rounded-full border fine-border bg-graphite/70 px-3.5 py-2 sm:inline-flex">
-                <span className="font-label text-[0.68rem] font-bold uppercase tracking-[0.2em] text-bone">
-                  Premium NZ domain asset
-                </span>
-              </div>
-            </div>
+            <StaggerItem>
+              <p className="mb-5 max-w-md text-xs font-bold uppercase tracking-[0.22em] text-[#9B7A42] sm:text-sm">
+                {hero.eyebrow}
+              </p>
+            </StaggerItem>
 
-            <p className="mb-4 font-label text-sm font-bold uppercase tracking-[0.28em] text-red sm:text-base">
-              {hero.domain}
-            </p>
+            <StaggerItem>
+              <h1 className="max-w-[11ch] text-balance text-[clamp(3.15rem,14vw,5.8rem)] font-black uppercase leading-[0.86] tracking-[-0.07em] text-[#F1E6CF] lg:text-[clamp(5rem,7.1vw,7.6rem)]">
+                {hero.headline}
+              </h1>
+            </StaggerItem>
 
-            <h1 className="max-w-4xl text-[2.9rem] font-black uppercase leading-[0.92] tracking-[-0.065em] text-cream sm:text-[4.4rem] md:text-[5.4rem] lg:text-[5.9rem] xl:text-[6.4rem]">
-              {hero.headline}
-            </h1>
-
-            <div className="mt-7 max-w-2xl border-l border-red/50 pl-5">
-              <p className="text-base leading-8 text-bone sm:text-lg sm:leading-8 md:text-xl md:leading-9">
+            <StaggerItem>
+              <p className="mt-7 max-w-2xl text-base leading-8 text-[#CDBF9F] sm:text-lg lg:text-xl">
                 {hero.subheadline}
               </p>
+            </StaggerItem>
 
-              <p className="mt-4 font-label text-xs font-bold uppercase tracking-[0.18em] text-brass sm:text-sm">
-                {hero.supportingLine}
-              </p>
-            </div>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={hero.primaryCta.href} className="primary-button">
-                {hero.primaryCta.label}
-              </a>
-
-              <a href={hero.secondaryCta.href} className="secondary-button">
-                {hero.secondaryCta.label}
-              </a>
-            </div>
-
-            <div className="mt-8 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
-              {heroMarkers.map((marker) => (
-                <div
-                  key={marker}
-                  className="rounded-full border fine-border bg-cream/[0.035] px-3 py-2 text-center font-label text-[0.66rem] font-bold uppercase tracking-[0.14em] text-bone sm:px-4"
+            <StaggerItem>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <MotionLink
+                  href={hero.primaryCta.href}
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#A33A2A]/70 bg-[#A33A2A] px-6 py-3 text-center text-xs font-black uppercase tracking-[0.14em] text-[#F1E6CF] shadow-[0_18px_60px_rgba(163,58,42,0.24)] transition hover:bg-[#732B22] sm:text-sm"
                 >
-                  {marker}
-                </div>
-              ))}
-            </div>
+                  {hero.primaryCta.label}
+                </MotionLink>
+
+                <MotionLink
+                  href={hero.secondaryCta.href}
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#F1E6CF]/15 bg-[#181816]/80 px-6 py-3 text-center text-xs font-black uppercase tracking-[0.14em] text-[#F1E6CF] transition hover:border-[#F1E6CF]/30 hover:bg-[#22211E] sm:text-sm"
+                >
+                  {hero.secondaryCta.label}
+                </MotionLink>
+              </div>
+            </StaggerItem>
           </div>
 
-          <aside className="premium-card relative overflow-hidden rounded-[1.5rem] p-5 sm:p-6 lg:p-7">
-            <div className="absolute right-4 top-4 h-16 w-16 rounded-full border border-red/25" />
-            <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full border border-brass/15" />
+          <StaggerItem>
+            <aside className="relative overflow-hidden rounded-[2rem] border border-[#F1E6CF]/10 bg-[#181816]/75 p-5 shadow-[0_30px_100px_rgba(0,0,0,0.34)] backdrop-blur sm:p-6 lg:self-center">
+              <div className="absolute right-[-80px] top-[-80px] h-44 w-44 rounded-full bg-[#A33A2A]/20 blur-3xl" />
 
-            <div className="relative">
-              <div className="flex items-start justify-between gap-5 border-b fine-border pb-5">
-                <div>
-                  <p className="eyebrow text-brass">Domain asset</p>
-                  <p className="mt-3 font-label text-3xl font-black tracking-[-0.08em] text-cream sm:text-4xl">
+              <div className="relative">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#9B7A42]">
+                  Domain asset
+                </p>
+
+                <div className="mt-7 border-y border-[#F1E6CF]/10 py-7">
+                  <p className="break-words text-[clamp(2.4rem,8vw,4.8rem)] font-black leading-none tracking-[-0.07em] text-[#F1E6CF] lg:text-[clamp(3.5rem,5vw,5.4rem)]">
                     {hero.domain}
+                  </p>
+
+                  <p className="mt-5 max-w-md text-sm leading-6 text-[#CDBF9F] sm:text-base sm:leading-7">
+                    {hero.supportingLine}
                   </p>
                 </div>
 
-                <div className="rounded-full border border-red/35 bg-red/10 px-3 py-1.5 font-label text-[0.62rem] font-bold uppercase tracking-[0.18em] text-cream">
-                  Open
+                <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                  {hero.markers.map((marker) => (
+                    <div
+                      key={marker}
+                      className="rounded-2xl border border-[#F1E6CF]/10 bg-[#0E0E0C]/50 px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] text-[#CDBF9F]"
+                    >
+                      {marker}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-[#A33A2A]/25 bg-[#A33A2A]/10 px-4 py-4">
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-[#F1E6CF]">
+                    Serious acquisition enquiries invited
+                  </p>
                 </div>
               </div>
-
-              <div className="grid gap-3 py-5 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-                {assetSignals.map((signal) => (
-                  <div
-                    key={signal.label}
-                    className="rounded-2xl border fine-border bg-ink/40 p-4"
-                  >
-                    <p className="font-label text-[0.62rem] font-bold uppercase tracking-[0.2em] text-steel">
-                      {signal.label}
-                    </p>
-                    <p className="mt-2 text-sm font-semibold leading-5 text-cream">
-                      {signal.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="rounded-2xl border border-red/25 bg-red/[0.075] p-5">
-                <p className="font-label text-[0.68rem] font-bold uppercase tracking-[0.22em] text-red">
-                  Commercial territory
-                </p>
-                <p className="mt-3 text-lg font-semibold leading-7 text-cream">
-                  Apparel. Automotive culture. Media. Events. Merch. Campaigns.
-                </p>
-              </div>
-
-              <div className="mt-5 border-t fine-border pt-5">
-                <p className="font-label text-xs font-bold uppercase tracking-[0.17em] text-bone/62">
-                  The buyer defines the direction.
-                </p>
-              </div>
-            </div>
-          </aside>
+            </aside>
+          </StaggerItem>
         </div>
       </div>
-    </section>
+    </HeroMotion>
   );
 }

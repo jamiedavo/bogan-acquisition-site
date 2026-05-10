@@ -1,18 +1,24 @@
+import {
+  MotionSection,
+  StaggerGroup,
+  StaggerItem,
+} from "@/components/MotionPrimitives";
 import { siteContent } from "@/data/siteContent";
 
 export default function CredibilityStrip() {
   return (
-    <section className="border-y border-[#2A2823] bg-[#0E0E0C]/80 px-5 py-5 sm:px-8 lg:px-10">
-      <div className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-5">
-        {siteContent.credibility.points.map((item) => (
-          <div
-            key={item}
-            className="rounded-full border border-[#2A2823] bg-[#181816] px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-[#CDBF9F]"
-          >
-            {item}
-          </div>
-        ))}
+    <MotionSection className="px-5 py-6 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <StaggerGroup className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          {siteContent.credibilityStrip.map((item) => (
+            <StaggerItem key={item}>
+              <div className="rounded-2xl border border-[#F1E6CF]/10 bg-[#181816]/60 px-4 py-4 text-center text-xs font-black uppercase tracking-[0.18em] text-[#CDBF9F] shadow-[0_18px_60px_rgba(0,0,0,0.18)]">
+                {item}
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
       </div>
-    </section>
+    </MotionSection>
   );
 }

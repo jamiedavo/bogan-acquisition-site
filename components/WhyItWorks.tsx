@@ -1,25 +1,36 @@
+import { MotionSection } from "@/components/MotionPrimitives";
 import { siteContent } from "@/data/siteContent";
 
 export default function WhyItWorks() {
-  const why = siteContent.whyItWorks;
+  const { whyItWorks } = siteContent;
 
   return (
-    <section className="px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
+    <MotionSection
+      id="why-it-works"
+      className="px-5 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div>
-          <p className="eyebrow text-red">{why.eyebrow}</p>
-
-          <h2 className="mt-4 max-w-xl text-4xl font-black leading-[0.95] text-cream md:text-6xl">
-            {why.heading}
+          <p className="mb-4 text-xs font-black uppercase tracking-[0.24em] text-[#9B7A42]">
+            Commercial logic
+          </p>
+          <h2 className="text-balance text-4xl font-black uppercase leading-[0.95] tracking-[-0.05em] text-[#F1E6CF] sm:text-5xl">
+            {whyItWorks.heading}
           </h2>
         </div>
 
-        <div className="space-y-6 text-lg leading-8 text-bone">
-          {why.copy.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+        <div className="rounded-[2rem] border border-[#F1E6CF]/10 bg-[#181816]/65 p-6 shadow-[0_30px_100px_rgba(0,0,0,0.22)] sm:p-8">
+          <p className="text-2xl font-black tracking-[-0.03em] text-[#F1E6CF]">
+            {whyItWorks.intro}
+          </p>
+
+          <div className="mt-6 space-y-5 text-base leading-8 text-[#CDBF9F]">
+            {whyItWorks.body.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }
