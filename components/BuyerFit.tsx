@@ -9,16 +9,16 @@ export default function BuyerFit() {
   const { buyerFit } = siteContent;
 
   return (
-    <MotionSection className="px-5 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+    <MotionSection className="px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div>
-          <p className="mb-4 text-xs font-black uppercase tracking-[0.24em] text-[#9B7A42]">
+          <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-[#9B7A42] sm:tracking-[0.24em]">
             Buyer fit
           </p>
-          <h2 className="text-balance text-4xl font-black uppercase leading-[0.95] tracking-[-0.05em] text-[#F1E6CF] sm:text-5xl">
+          <h2 className="max-w-2xl text-balance text-[clamp(2.45rem,11vw,4.5rem)] font-black uppercase leading-[0.95] tracking-[-0.055em] text-[#F1E6CF] lg:text-5xl">
             {buyerFit.heading}
           </h2>
-          <p className="mt-5 text-lg leading-8 text-[#CDBF9F]">
+          <p className="mt-5 text-base leading-7 text-[#CDBF9F] sm:text-lg sm:leading-8">
             {buyerFit.copy}
           </p>
         </div>
