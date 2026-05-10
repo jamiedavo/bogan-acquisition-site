@@ -4,29 +4,54 @@ export default function FinalCTA() {
   const { finalCta } = siteContent;
 
   return (
-    <section id="enquire" className="section-shell section-spacing relative z-10">
-      <div className="relative overflow-hidden rounded-[2rem] border border-red/25 bg-red/10 p-7 shadow-premium md:p-12 lg:p-16">
-        <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-red/20 blur-3xl" />
-        <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-red via-cream/20 to-transparent" />
+    <section id="enquire" className="relative overflow-hidden px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(163,58,42,0.18),transparent_34%)]" />
 
-        <div className="relative max-w-4xl">
-          <p className="eyebrow text-red">{finalCta.eyebrow}</p>
-          <h2 className="mt-4 text-4xl font-black leading-[0.95] text-cream md:text-6xl lg:text-7xl">
-            {finalCta.heading}
-          </h2>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-bone md:text-xl md:leading-9">
-            {finalCta.copy}
-          </p>
+      <div className="relative mx-auto max-w-7xl">
+        <div className="rounded-[2rem] border border-[#3A332B] bg-[#181816] p-6 shadow-[0_30px_120px_rgba(0,0,0,0.4)] sm:p-10 lg:p-14">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+            <div>
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.24em] text-[#A33A2A]">
+                {finalCta.eyebrow}
+              </p>
 
-          <div className="mt-9">
-            <a className="primary-button" href={finalCta.href}>
-              {finalCta.button}
-            </a>
+              <h2 className="max-w-4xl text-4xl font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#F1E6CF] sm:text-6xl lg:text-7xl">
+                {finalCta.heading}
+              </h2>
+
+              <p className="mt-6 max-w-2xl text-base leading-7 text-[#CDBF9F] sm:text-lg">
+                {finalCta.copy}
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-[#332F28] bg-[#0E0E0C]/80 p-5 sm:p-6">
+              <p className="text-sm leading-6 text-[#CDBF9F]">
+                {finalCta.note}
+              </p>
+
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <a
+                  href={finalCta.primaryCta.href}
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#B74B39]/40 bg-[#A33A2A] px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-[#F1E6CF] transition duration-300 hover:-translate-y-0.5 hover:bg-[#732B22] hover:shadow-[0_18px_45px_rgba(163,58,42,0.28)]"
+                >
+                  {finalCta.primaryCta.label}
+                </a>
+
+                <a
+                  href={finalCta.secondaryCta.href}
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#3A332B] bg-[#181816] px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-[#F1E6CF] transition duration-300 hover:-translate-y-0.5 hover:border-[#A33A2A]/60 hover:bg-[#201D1A]"
+                >
+                  {finalCta.secondaryCta.label}
+                </a>
+              </div>
+
+              <div className="mt-6 border-t border-[#2A2823] pt-5">
+                <p className="text-xs uppercase tracking-[0.2em] text-[#9B7A42]">
+                  Domain acquisition · Secure transfer · Concept deck on request
+                </p>
+              </div>
+            </div>
           </div>
-
-          <p className="mt-6 max-w-xl font-label text-xs font-bold uppercase tracking-[0.15em] text-cream/58">
-            {finalCta.trustNote}
-          </p>
         </div>
       </div>
     </section>

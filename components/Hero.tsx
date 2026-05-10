@@ -17,7 +17,7 @@ const assetSignals = [
 
 export default function Hero() {
   const { hero } = siteContent;
-  const heroMarkers = siteContent.credibility.slice(0, 4);
+  const heroMarkers = siteContent.credibility.points.slice(0, 4);
 
   return (
     <section className="section-shell relative z-10 pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12">
