@@ -1,37 +1,20 @@
-const enquirySubject = encodeURIComponent("Acquisition enquiry for bogan.co.nz");
-
-const enquiryBody = encodeURIComponent(`Hi Jamie,
-
-I'm interested in bogan.co.nz.
-
-Buyer / company:
-Intended use:
-Interested in:
-- Domain acquisition
-- Short concept pack
-- Both
-
-Message:
-
-Thanks,`);
-
 export const siteContent = {
-  site: {
-    domain: "bogan.co.nz",
-    title: "bogan.co.nz is for acquisition",
-    publicPriceLine:
-      "Premium one-word .co.nz domain. Serious acquisition enquiries invited.",
-    enquiryHref: `mailto:hello@bogan.co.nz?subject=${enquirySubject}&body=${enquiryBody}`,
-  },
-
   hero: {
     eyebrow: "Available for acquisition",
+    domain: "bogan.co.nz",
     headline: "A rare one-word NZ domain with cultural punch",
     subheadline:
       "bogan.co.nz is a memorable, commercially usable .co.nz domain with clear fit across apparel, automotive culture, media, events, merch, and humour-led NZ lifestyle branding.",
-    supportingLine: "Available for acquisition by the right buyer.",
-    primaryCta: "Start an acquisition enquiry",
-    secondaryCta: "See commercial directions",
+    supportingLine:
+      "Premium one-word .co.nz domain. Serious acquisition enquiries invited.",
+    primaryCta: {
+      label: "Start an acquisition enquiry",
+      href: "#enquire",
+    },
+    secondaryCta: {
+      label: "See commercial directions",
+      href: "#directions",
+    },
   },
 
   credibility: [
@@ -42,17 +25,17 @@ export const siteContent = {
     "Available now",
   ],
 
-  whyItWorks: {
+  why: {
     eyebrow: "Why it works",
     heading: "Why bogan.co.nz works",
-    paragraphs: [
-      "Some names need explaining. This one does not.",
+    lead: "Some names need explaining. This one does not.",
+    body: [
       "bogan.co.nz carries instant recognition, tone, and cultural signal. It is short, easy to remember, easy to say, and flexible enough to support multiple commercial paths — from merch and events to media campaigns, automotive culture, and humour-led ecommerce.",
       "The strength of the name is not that it suits everyone. It is that it suits the right buyers very clearly.",
     ],
   },
 
-  commercialDirections: {
+  directions: {
     eyebrow: "Commercial directions",
     heading: "Three obvious ways to use it",
     intro:
@@ -131,8 +114,7 @@ export const siteContent = {
   buyerFit: {
     eyebrow: "Buyer fit",
     heading: "Who this domain suits",
-    copy:
-      "bogan.co.nz is strongest for buyers who can turn cultural recognition into audience, products, content, tickets, or campaign attention.",
+    copy: "bogan.co.nz is strongest for buyers who can turn cultural recognition into audience, products, content, tickets, or campaign attention.",
     buyers: [
       "Automotive and event promoters",
       "Media and radio brands",
@@ -154,21 +136,16 @@ export const siteContent = {
       "Optional concept deck available for serious buyers",
       "Buyer-specific mockups available on request",
     ],
-    copy:
-      "This is a domain acquisition opportunity, not a sale of a finished operating business. The concept work exists to show commercial potential and possible directions only.",
+    copy: "This is a domain acquisition opportunity, not a sale of a finished operating business. The concept work exists to show commercial potential and possible directions only.",
   },
 
   finalCta: {
-    eyebrow: "Next step",
+    eyebrow: "Serious enquiries",
     heading: "Serious acquisition enquiries invited",
-    copy:
-      "Tell me who you are, how you would use the name, and whether you are interested in a straight domain acquisition or a short concept pack showing how bogan.co.nz could work for your brand.",
+    copy: "Tell me who you are, how you would use the name, and whether you are interested in a straight domain acquisition or a short concept pack showing how bogan.co.nz could work for your brand.",
     button: "Enquire about bogan.co.nz",
+    href: "mailto:hello@bogan.co.nz?subject=Acquisition%20enquiry%20for%20bogan.co.nz",
     trustNote:
       "Transfer can be completed through a secure registrar or escrow process.",
   },
-};
-
-export type SiteContent = typeof siteContent;
-export type CommercialDirection =
-  (typeof siteContent.commercialDirections.cards)[number];
+} as const;

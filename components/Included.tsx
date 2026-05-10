@@ -1,37 +1,36 @@
 import { siteContent } from "@/data/siteContent";
 
-type IncludedProps = {
-  content: typeof siteContent.included;
-};
+export default function Included() {
+  const { included } = siteContent;
 
-export function Included({ content }: IncludedProps) {
   return (
-    <section className="grid gap-10 border-b border-neutral-800 py-20 lg:grid-cols-[0.8fr_1.2fr]">
-      <div>
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-red-400">
-          {content.eyebrow}
-        </p>
+    <section className="section-shell section-spacing relative z-10">
+      <div className="premium-card rounded-[2rem] p-7 md:p-10 lg:p-12">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="eyebrow text-red">{included.eyebrow}</p>
+            <h2 className="mt-4 text-4xl font-black leading-[0.95] text-cream md:text-6xl">
+              {included.heading}
+            </h2>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-bone">
+              {included.copy}
+            </p>
+          </div>
 
-        <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">
-          {content.heading}
-        </h2>
-      </div>
-
-      <div>
-        <ul className="space-y-3">
-          {content.points.map((point) => (
-            <li
-              key={point}
-              className="rounded-2xl border border-neutral-800 bg-neutral-900 p-4 text-neutral-300"
-            >
-              {point}
-            </li>
-          ))}
-        </ul>
-
-        <p className="mt-6 text-lg leading-8 text-neutral-300">
-          {content.copy}
-        </p>
+          <div className="grid gap-3">
+            {included.points.map((point) => (
+              <div
+                key={point}
+                className="flex gap-4 border fine-border bg-ink/38 p-5"
+              >
+                <span className="mt-2 h-2 w-2 shrink-0 bg-red" />
+                <p className="font-label text-sm font-bold uppercase tracking-[0.12em] text-cream/86">
+                  {point}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

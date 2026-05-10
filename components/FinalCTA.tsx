@@ -1,36 +1,33 @@
 import { siteContent } from "@/data/siteContent";
 
-type FinalCTAProps = {
-  content: typeof siteContent.finalCta;
-  enquiryHref: string;
-};
+export default function FinalCTA() {
+  const { finalCta } = siteContent;
 
-export function FinalCTA({ content, enquiryHref }: FinalCTAProps) {
   return (
-    <section id="enquire" className="py-20 sm:py-24">
-      <div className="rounded-3xl border border-neutral-800 bg-neutral-900 p-8 sm:p-10 lg:p-12">
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-red-400">
-          {content.eyebrow}
-        </p>
+    <section id="enquire" className="section-shell section-spacing relative z-10">
+      <div className="relative overflow-hidden rounded-[2rem] border border-red/25 bg-red/10 p-7 shadow-premium md:p-12 lg:p-16">
+        <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-red/20 blur-3xl" />
+        <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-red via-cream/20 to-transparent" />
 
-        <h2 className="max-w-3xl text-4xl font-black tracking-tight text-white sm:text-5xl">
-          {content.heading}
-        </h2>
+        <div className="relative max-w-4xl">
+          <p className="eyebrow text-red">{finalCta.eyebrow}</p>
+          <h2 className="mt-4 text-4xl font-black leading-[0.95] text-cream md:text-6xl lg:text-7xl">
+            {finalCta.heading}
+          </h2>
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-bone md:text-xl md:leading-9">
+            {finalCta.copy}
+          </p>
 
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-300">
-          {content.copy}
-        </p>
+          <div className="mt-9">
+            <a className="primary-button" href={finalCta.href}>
+              {finalCta.button}
+            </a>
+          </div>
 
-        <div className="mt-8">
-          <a
-            href={enquiryHref}
-            className="inline-flex items-center justify-center rounded-full bg-red-700 px-6 py-3 text-sm font-bold text-white transition hover:bg-red-600"
-          >
-            {content.button}
-          </a>
+          <p className="mt-6 max-w-xl font-label text-xs font-bold uppercase tracking-[0.15em] text-cream/58">
+            {finalCta.trustNote}
+          </p>
         </div>
-
-        <p className="mt-6 text-sm text-neutral-500">{content.trustNote}</p>
       </div>
     </section>
   );

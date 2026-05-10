@@ -1,75 +1,67 @@
-import type { CommercialDirection } from "@/data/siteContent";
 import { siteContent } from "@/data/siteContent";
 
-type ConceptCardsProps = {
-  content: typeof siteContent.commercialDirections;
-};
+export default function ConceptCards() {
+  const { directions } = siteContent;
 
-function ConceptCard({ card }: { card: CommercialDirection }) {
-  return (
-    <article className="flex h-full flex-col rounded-3xl border border-neutral-800 bg-neutral-900 p-6">
-      <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-red-400">
-        {card.category}
-      </p>
-
-      <h3 className="text-2xl font-black tracking-tight text-white">
-        {card.name}
-      </h3>
-
-      <p className="mt-5 leading-7 text-neutral-300">{card.description}</p>
-
-      <div className="mt-7 grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-        <div>
-          <h4 className="text-sm font-bold uppercase tracking-[0.16em] text-neutral-500">
-            Potential uses
-          </h4>
-
-          <ul className="mt-3 space-y-2 text-sm text-neutral-300">
-            {card.potentialUses.map((use) => (
-              <li key={use}>• {use}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-bold uppercase tracking-[0.16em] text-neutral-500">
-            Visual cues
-          </h4>
-
-          <ul className="mt-3 space-y-2 text-sm text-neutral-300">
-            {card.visualCues.map((cue) => (
-              <li key={cue}>• {cue}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </article>
-  );
-}
-
-export function ConceptCards({ content }: ConceptCardsProps) {
   return (
     <section
-      id="commercial-directions"
-      className="border-b border-neutral-800 py-20"
+      id="directions"
+      className="section-shell section-spacing relative z-10 border-y fine-border"
     >
-      <div className="max-w-3xl">
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-red-400">
-          {content.eyebrow}
-        </p>
-
-        <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">
-          {content.heading}
+      <div className="mb-12 max-w-3xl md:mb-16">
+        <p className="eyebrow text-red">{directions.eyebrow}</p>
+        <h2 className="mt-4 text-4xl font-black leading-[0.95] text-cream md:text-6xl">
+          {directions.heading}
         </h2>
-
-        <p className="mt-5 text-lg leading-8 text-neutral-300">
-          {content.intro}
-        </p>
+        <p className="mt-6 text-lg leading-8 text-bone">{directions.intro}</p>
       </div>
 
-      <div className="mt-10 grid gap-5 lg:grid-cols-3">
-        {content.cards.map((card) => (
-          <ConceptCard key={card.name} card={card} />
+      <div className="grid gap-5 lg:grid-cols-3">
+        {directions.cards.map((card, index) => (
+          <article
+            key={card.name}
+            className="premium-card group relative flex min-h-full flex-col overflow-hidden rounded-3xl p-6 transition duration-200 hover:-translate-y-1 hover:border-red/35 md:p-7"
+          >
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red via-brass/70 to-transparent opacity-80" />
+
+            <div className="flex items-start justify-between gap-5">
+              <p className="font-label text-xs font-bold uppercase tracking-[0.16em] text-red">
+                0{index + 1}
+              </p>
+              <p className="max-w-[12rem] text-right font-label text-[0.68rem] font-bold uppercase tracking-[0.15em] text-bone/58">
+                {card.category}
+              </p>
+            </div>
+
+            <h3 className="mt-8 text-3xl font-black leading-none text-cream md:text-4xl">
+              {card.name}
+            </h3>
+
+            <p className="mt-5 flex-1 text-base leading-7 text-bone">
+              {card.description}
+            </p>
+
+            <div className="mt-8">
+              <p className="eyebrow text-cream/52">Potential uses</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {card.potentialUses.map((use) => (
+                  <span
+                    key={use}
+                    className="border border-concrete/15 bg-ink/45 px-3 py-1.5 text-xs font-medium text-bone"
+                  >
+                    {use}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-7 border-t fine-border pt-5">
+              <p className="eyebrow text-cream/52">Visual cues</p>
+              <p className="mt-3 text-sm leading-6 text-bone/75">
+                {card.visualCues.join(" · ")}
+              </p>
+            </div>
+          </article>
         ))}
       </div>
     </section>

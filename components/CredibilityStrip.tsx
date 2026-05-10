@@ -1,18 +1,16 @@
-type CredibilityStripProps = {
-  items: string[];
-};
+import { siteContent } from "@/data/siteContent";
 
-export function CredibilityStrip({ items }: CredibilityStripProps) {
+export default function CredibilityStrip() {
   return (
-    <section aria-label="Domain credibility markers" className="border-b border-neutral-800 py-6">
-      <div className="flex flex-wrap gap-3">
-        {items.map((item) => (
-          <span
+    <section className="section-shell relative z-10">
+      <div className="grid gap-px overflow-hidden border fine-border bg-concrete/10 md:grid-cols-5">
+        {siteContent.credibility.map((item) => (
+          <div
             key={item}
-            className="rounded-full border border-neutral-800 bg-neutral-900 px-4 py-2 text-sm font-medium text-neutral-300"
+            className="bg-graphite/78 px-5 py-5 text-center font-label text-xs font-bold uppercase tracking-[0.16em] text-cream/78 md:py-6"
           >
             {item}
-          </span>
+          </div>
         ))}
       </div>
     </section>
