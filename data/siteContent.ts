@@ -24,7 +24,7 @@ export const siteContent = {
     domain: "bogan.co.nz",
     headline: "The word comes with an audience.",
     subheadline:
-      "A short, memorable .co.nz domain built around one of New Zealand’s most recognisable cultural labels — ready for the right buyer to turn that recognition into merch, media, motors, events, or campaign attention.",
+      "A short, memorable .co.nz domain built around one of New Zealand’s most recognisable cultural labels, and ready for the right buyer to turn that recognition into merch, media, motors, events, or campaign attention.",
     supportingLine:
       "Premium one-word .co.nz domain. Serious acquisition enquiries invited.",
     primaryCta: {
