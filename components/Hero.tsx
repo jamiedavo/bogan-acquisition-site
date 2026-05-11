@@ -11,6 +11,7 @@ export default function Hero() {
   return (
     <HeroMotion className="relative px-5 pb-16 pt-6 sm:px-6 sm:pb-20 sm:pt-8 lg:px-8 lg:pb-24">
       <div className="mx-auto max-w-7xl">
+        {/* Navigation Header */}
         <div className="mb-8 flex items-center justify-between gap-4 border-b border-[#F1E6CF]/10 pb-5 sm:mb-10">
           <StaggerItem>
             <a
@@ -31,7 +32,9 @@ export default function Hero() {
           </StaggerItem>
         </div>
 
+        {/* Main Hero Grid */}
         <div className="grid gap-9 xl:min-h-[calc(100svh-150px)] xl:grid-cols-[minmax(0,0.92fr)_minmax(360px,0.68fr)] xl:items-center xl:gap-14">
+          {/* Left Content */}
           <div className="max-w-4xl">
             <StaggerItem>
               <div className="mb-5 inline-flex rounded-full border border-[#A33A2A]/40 bg-[#A33A2A]/10 px-4 py-2 text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#F1E6CF] shadow-[0_0_40px_rgba(163,58,42,0.14)] sm:text-xs sm:tracking-[0.2em]">
@@ -76,6 +79,7 @@ export default function Hero() {
             </StaggerItem>
           </div>
 
+          {/* Right Sidebar - Domain Card */}
           <StaggerItem>
             <aside className="relative overflow-hidden rounded-[1.75rem] border border-[#F1E6CF]/10 bg-[#181816]/75 p-5 shadow-[0_30px_100px_rgba(0,0,0,0.34)] backdrop-blur sm:rounded-[2rem] sm:p-6 xl:self-center">
               <div className="absolute right-[-80px] top-[-80px] h-44 w-44 rounded-full bg-[#A33A2A]/20 blur-3xl" />

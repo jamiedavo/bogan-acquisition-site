@@ -9,13 +9,13 @@ export default function Included() {
   const { included } = siteContent;
 
   return (
-    <MotionSection className="px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
+    <MotionSection className="px-5 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-9 max-w-3xl sm:mb-10">
+        <div className="mb-8 max-w-3xl sm:mb-10">
           <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-[#9B7A42] sm:tracking-[0.24em]">
             Acquisition detail
           </p>
-          <h2 className="max-w-3xl text-balance text-[clamp(2.45rem,11vw,4.5rem)] font-black uppercase leading-[0.95] tracking-[-0.055em] text-[#F1E6CF] lg:text-5xl">
+          <h2 className="max-w-3xl text-balance text-[clamp(2.35rem,10vw,4.25rem)] font-black uppercase leading-[0.96] tracking-[-0.035em] text-[#F1E6CF] lg:text-5xl">
             {included.heading}
           </h2>
           <p className="mt-5 text-base leading-7 text-[#CDBF9F] sm:text-lg sm:leading-8">
@@ -23,7 +23,7 @@ export default function Included() {
           </p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
+        <div className="grid gap-5 lg:grid-cols-[0.94fr_1.06fr] lg:items-start">
           <StaggerGroup className="grid gap-3 sm:grid-cols-2">
             {included.points.map((point) => (
               <StaggerItem key={point}>
@@ -34,11 +34,11 @@ export default function Included() {
             ))}
           </StaggerGroup>
 
-          <div className="rounded-[1.75rem] border border-[#F1E6CF]/10 bg-[#181816]/65 p-5 shadow-[0_30px_100px_rgba(0,0,0,0.22)] sm:rounded-[2rem] sm:p-6">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#9B7A42]">
+          <div className="rounded-[1.75rem] border border-[#A33A2A]/25 bg-[linear-gradient(145deg,rgba(163,58,42,0.12),rgba(24,24,22,0.72))] p-6 shadow-[0_30px_100px_rgba(0,0,0,0.22)] sm:rounded-[2rem] sm:p-7">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#CDBF9F]">
               Clarification
             </p>
-            <h3 className="mt-4 text-2xl font-black uppercase tracking-[-0.04em] text-[#F1E6CF]">
+            <h3 className="mt-4 max-w-2xl text-balance text-[clamp(1.65rem,7vw,2.6rem)] font-black uppercase leading-[1.02] tracking-[-0.02em] text-[#F1E6CF]">
               {included.whatThisIsNot.heading}
             </h3>
             <p className="mt-4 text-sm leading-7 text-[#CDBF9F]">
@@ -47,7 +47,7 @@ export default function Included() {
           </div>
         </div>
 
-        <StaggerGroup className="mt-7 grid gap-3 sm:mt-8 sm:grid-cols-2 lg:grid-cols-4">
+        <StaggerGroup className="mt-5 grid gap-3 sm:mt-6 sm:grid-cols-2 lg:grid-cols-4">
           {included.process.map((step, index) => (
             <StaggerItem key={step}>
               <div className="h-full rounded-2xl border border-[#F1E6CF]/10 bg-[#0E0E0C]/55 p-5">
