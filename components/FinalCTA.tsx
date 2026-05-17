@@ -119,7 +119,7 @@ export default function FinalCTA() {
         <aside className="grid gap-4">
           <div className="rounded-[1.5rem] border border-[#F1E6CF]/10 bg-[#0E0E0C]/65 p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#9B7A42]">
-              What to include
+              
             </p>
 
             <ul className="mt-5 space-y-3">
