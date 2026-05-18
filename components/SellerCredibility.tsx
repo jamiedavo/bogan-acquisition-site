@@ -15,7 +15,7 @@ export default function SellerCredibility() {
           <p className="mb-4 text-xs font-black uppercase tracking-[0.24em] text-[#9B7A42]">
             {sellerCredibility.eyebrow}
           </p>
-          <h2 className="max-w-3xl text-balance text-[clamp(2.35rem,10vw,4.25rem)] font-black uppercase leading-[0.98] tracking-[-0.02em] text-[#F1E6CF] lg:text-5xl">
+          <h2 className="max-w-3xl text-balance text-[clamp(2.35rem,10vw,4.25rem)] font-black uppercase leading-[0.98] tracking-[-0.02em] text-[#F1E6CF] lg:text-5xl heading-wordspace">
             {sellerCredibility.heading}
           </h2>
           <p className="mt-5 text-base leading-7 text-[#CDBF9F] sm:text-lg sm:leading-8">

@@ -153,6 +153,11 @@ p {
   color: rgba(241, 230, 207, 0.72);
 }
 
+/* Heading word spacing for large display headings */
+.heading-wordspace {
+  word-spacing: 0.15em;
+}
+
 /* Visual system */
 
 .hero-glow-panel {

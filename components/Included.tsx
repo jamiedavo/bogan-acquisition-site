@@ -15,7 +15,7 @@ export default function Included() {
           <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-[#9B7A42] sm:tracking-[0.24em]">
             Acquisition detail
           </p>
-          <h2 className="max-w-3xl text-balance text-[clamp(2.35rem,10vw,4.25rem)] font-black uppercase leading-[0.96] tracking-[-0.035em] text-[#F1E6CF] lg:text-5xl">
+          <h2 className="max-w-3xl text-balance text-[clamp(2.35rem,10vw,4.25rem)] font-black uppercase leading-[0.96] tracking-[-0.035em] text-[#F1E6CF] lg:text-5xl heading-wordspace">
             {included.heading}
           </h2>
           <p className="mt-5 text-base leading-7 text-[#CDBF9F] sm:text-lg sm:leading-8">
@@ -38,7 +38,7 @@ export default function Included() {
             <p className="text-xs font-black uppercase tracking-[0.22em] text-[#CDBF9F]">
               Clarification
             </p>
-            <h3 className="mt-4 max-w-2xl text-balance text-[clamp(1.65rem,7vw,2.6rem)] font-black uppercase leading-[1.02] tracking-[-0.02em] text-[#F1E6CF]">
+            <h3 className="mt-4 max-w-2xl text-balance text-[clamp(1.65rem,7vw,2.6rem)] font-black uppercase leading-[1.02] tracking-[-0.02em] text-[#F1E6CF] heading-wordspace">
               {included.whatThisIsNot.heading}
             </h3>
             <p className="mt-4 text-sm leading-7 text-[#CDBF9F]">

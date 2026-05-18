@@ -49,7 +49,7 @@ export default function Hero() {
             </StaggerItem>
 
             <StaggerItem>
-              <h1 className="max-w-[11ch] text-balance text-[clamp(3.4rem,15vw,5.6rem)] font-black uppercase leading-[0.86] tracking-[-0.07em] text-[#F1E6CF] sm:text-[clamp(4.5rem,10vw,6.7rem)] lg:text-[clamp(5.6rem,7vw,7.7rem)]">
+              <h1 className="max-w-[11ch] text-balance text-[clamp(3.4rem,15vw,5.6rem)] font-black uppercase leading-[0.86] tracking-[-0.07em] text-[#F1E6CF] sm:text-[clamp(4.5rem,10vw,6.7rem)] lg:text-[clamp(5.6rem,7vw,7.7rem)] heading-wordspace">
                 {hero.headline}
               </h1>
             </StaggerItem>

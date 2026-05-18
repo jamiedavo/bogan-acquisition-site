@@ -39,7 +39,7 @@ export default function ConceptCards() {
           <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-[#9B7A42] sm:tracking-[0.24em]">
             Commercial directions
           </p>
-          <h2 className="max-w-4xl text-balance text-[clamp(2.35rem,10vw,4.35rem)] font-black uppercase leading-[0.94] tracking-[-0.02em] text-[#F1E6CF] lg:text-5xl">
+          <h2 className="max-w-4xl text-balance text-[clamp(2.35rem,10vw,4.35rem)] font-black uppercase leading-[0.94] tracking-[-0.02em] text-[#F1E6CF] lg:text-5xl heading-wordspace">
             {commercialDirections.heading}
           </h2>
           <p className="mt-5 text-base leading-7 text-[#CDBF9F] sm:text-lg sm:leading-8">

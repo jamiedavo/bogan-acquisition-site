@@ -24,7 +24,7 @@ export default function FAQ() {
           <p className="mb-4 text-xs font-black uppercase tracking-[0.24em] text-[#9B7A42]">
             {faq.eyebrow}
           </p>
-          <h2 className="max-w-3xl text-balance text-[clamp(2.45rem,11vw,4.5rem)] font-black uppercase leading-[0.95] tracking-[-0.055em] text-[#F1E6CF] lg:text-5xl">
+          <h2 className="max-w-3xl text-balance text-[clamp(2.45rem,11vw,4.5rem)] font-black uppercase leading-[0.95] tracking-[-0.055em] text-[#F1E6CF] lg:text-5xl heading-wordspace">
             {faq.heading}
           </h2>
         </div>
