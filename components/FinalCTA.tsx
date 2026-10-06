@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const enquiryEmail = "hello@bogan.co.nz";
+const enquiryEmail = "jamiefrancisdavidson@gmail.com";
 
 const primarySubject = "Acquisition enquiry — bogan.co.nz";
 
@@ -93,7 +93,7 @@ export default function FinalCTA() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <motion.a
               href={enquiryHref}
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#A33A2A]/70 bg-[#A33A2A] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#F1E6CF] shadow-lg shadow-[#A33A2A]/20 transition hover:border-[#C44A38] hover:bg-[#8F3328] focus:outline-none focus:ring-2 focus:ring-[#A33A2A] focus:ring-offset-2 focus:ring-offset-[#181816]"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#A33A2A]/70 bg-[#A33A2A] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#F1E6CF] transition hover:border-[#D25540] hover:bg-[#D25540] hover:shadow-[0_20px_60px_rgba(163,58,42,0.3)]"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -102,7 +102,7 @@ export default function FinalCTA() {
 
             <motion.a
               href={deckHref}
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#F1E6CF]/16 bg-[#0E0E0C]/50 px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#F1E6CF] transition hover:border-[#F1E6CF]/30 hover:bg-[#F1E6CF]/8 focus:outline-none focus:ring-2 focus:ring-[#F1E6CF]/30 focus:ring-offset-2 focus:ring-offset-[#181816]"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#F1E6CF]/16 bg-[#0E0E0C]/50 px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#F1E6CF] transition hover:border-[#F1E6CF]/25 hover:bg-[#181816]"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
